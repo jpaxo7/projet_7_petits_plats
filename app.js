@@ -1,6 +1,6 @@
 import { displayRecipes } from "./scripts/displayRecipes.js";
 import { recipes } from "./scripts/recipes.js";
-import { searchRecipes } from "./scripts/search.js";
+import { searchRecipes } from "./scripts/searchFunc.js";
 import { populateDropdown } from "./scripts/dropdown.js";
 import {
   filterByTags,
