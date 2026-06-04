@@ -1,9 +1,8 @@
 export function searchRecipes(recipesList, searchTerm) {
+  const search = searchTerm.trim().toLowerCase();
   if (searchTerm.length < 3) {
     return recipesList;
   }
-
-  const search = searchTerm.trim().toLowerCase();
 
   return recipesList.filter(
     (recipe) =>
