@@ -2,7 +2,7 @@ import { displayRecipes } from "./displayRecipes.js";
 import { recipes } from "./recipes.js";
 
 export function searchRecipes(recipes, searchTerm) {
-  const search = searchTerm.toLowerCase();
+  const search = searchTerm.trim().toLowerCase();
 
   if (searchTerm.length < 3) {
     return recipes;
