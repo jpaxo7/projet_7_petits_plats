@@ -1,6 +1,6 @@
 import { displayRecipes } from "./scripts/displayRecipes.js";
 import { recipes } from "./scripts/recipes.js";
-import { searchRecipes } from "./scripts/search.js";
+import { searchRecipes } from "./scripts/searchFunc.js";
 import { populateDropdown } from "./scripts/dropdown.js";
 import {
   filterByTags,
@@ -24,10 +24,15 @@ function updateUI() {
 
   // Display recipes or "no results" message
   if (filteredRecipes.length === 0) {
+    const recipesContainer = document.getElementById("recipes-grid");
     recipesContainer.innerHTML = "";
     const message = document.createElement("p");
     message.className = "text-center w-100";
-    message.textContent = `Aucune recette ne contient "${state.searchTerm}". Vous pouvez chercher « tarte aux pommes », « poisson », etc.`;
+    if (state.searchTerm.length >= 3) {
+      message.textContent = `Aucune recette ne contient "${state.searchTerm}". Vous pouvez chercher « tarte aux pommes », « poisson », etc.`;
+    } else {
+      message.textContent = "Aucune recette ne correspond à votre sélection.";
+    }
     recipesContainer.appendChild(message);
   } else {
     displayRecipes(filteredRecipes);
