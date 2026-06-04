@@ -3,7 +3,7 @@ export function searchRecipes(recipesList, searchTerm) {
     return recipesList;
   }
 
-  const search = searchTerm.toLowerCase();
+  const search = searchTerm.trim().toLowerCase();
 
   return recipesList.filter(
     (recipe) =>
